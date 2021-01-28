@@ -9,24 +9,38 @@
 
     <ion-item>
         <ion-label position="floating">Nome</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]='user.nome' name='nome'></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label position="floating">E-mail</ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input type="email" [(ngModel)]='user.email' name='email'></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label position="floating">Senha</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]='user.senha' name='password'></ion-input>
 
 
     </ion-item>
 
     <ion-item>
-        <ion-button expand="block" color="success">Salvar</ion-button>
+        <ion-label position="floating">Confirmar Senha</ion-label>
+        <ion-input type="password" [(ngModel)]='confsenha' name='password'></ion-input>
+
+
+    </ion-item>
+
+    <ion-item>
+        <ion-button expand="block" (click)="salvar()" color="success">Salvar</ion-button>
         <ion-button expand="block" color="danger">Cancelar</ion-button>
     </ion-item>
 
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button routerLink="/tabs/user-add">
+            <ion-icon name="return-down-back-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+    <!-- {{user.nome}} - {{user.email}} - {{user.senha}} -->
 </ion-content>
